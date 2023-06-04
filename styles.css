@@ -1,0 +1,208 @@
+:root {
+    /* Primary */
+    --gradient1: hsl(6, 100%, 80%);
+    --gradient2: hsl(335, 100%, 65%);
+    /* Neutral */
+    --paleBlue: hsl(243, 100%, 93%);
+    --grayishBlue: hsl(229, 7%, 55%);
+    --darkBlue: hsl(228, 56%, 26%);
+    --veryDarkBlue: hsl(229, 57%, 11%);    
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    color: var(--paleBlue);
+    min-height: 100vh;
+    background-image: url(images/bg-mobile.png);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+main {
+    margin: auto;
+    width: 85%;
+}
+
+section {
+    background-color: var(--darkBlue);
+    border-radius: 10px;
+    padding: 2.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    margin-inline: auto;
+    width: 100%; 
+}
+
+/* Section Logo */
+.section-logo {
+    max-width: 360px;
+    gap: 2rem;
+    border-radius: 10px 100px 10px 10px;
+    text-align: start;
+}
+
+.section-logo > div {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.section-logo > div div {
+    background-color: var(--veryDarkBlue);
+    border-radius: 10px;    
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Section Numbers */
+.section-numbers {
+    max-width: 360px;
+    gap: 1rem;
+    padding: 2rem 2rem 3rem 2rem;
+    position: relative;
+}
+
+.section-numbers > p span {
+    font-weight: 700;
+}
+
+.div-bar {
+    border-radius: 50px;
+    background-color: var(--veryDarkBlue);
+    height: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.div-bar > div {
+    border-radius: 50px;
+    background: linear-gradient(to right, var(--gradient1), var(--gradient2));
+    height: 16px;
+    width: 75%;
+    margin-inline: 2px;
+    display: flex;
+    align-items: center;
+}
+
+.div-bar > div > div{
+    border-radius: 50px;
+    background: var(--paleBlue);
+    height: 14px;
+    width: 14px;
+    margin-inline: 2px;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.section-numbers > div:nth-of-type(2) {
+    font-weight: 700;
+    font-size: .8rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: -.5rem;
+}
+
+.section-numbers-absolute {
+    background-color: var(--paleBlue);
+    border-radius: 10px;
+    font-weight: 700;
+    padding: .9rem;
+    width: 55%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.section-numbers-absolute span {
+    color: var(--veryDarkBlue);
+    font-size: 2.4rem;
+}
+
+.section-numbers-absolute p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    color: var(--grayishBlue);
+    font-size: .8rem;
+}
+
+/* Footer */
+footer { 
+    font-size: 11px; 
+    text-align: center; 
+}
+
+footer a { 
+    text-decoration: none;
+    color: var(--gradient2); 
+}
+
+@media screen and (min-width: 1000px) {
+    body {
+        background-color: var(--veryDarkBlue);
+        background-image: url(images/bg-desktop.png);
+        background-repeat: no-repeat;
+        background-size: 100% 50%;
+        background-position: bottom;
+    }
+    
+    main {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        align-items: end;
+        width: 100%;
+    }
+
+    section {
+        margin-inline: unset;
+    }
+
+    /* Section Numbers */
+    .section-numbers {
+        padding: 2.5rem;
+        max-width: 525px;
+        text-align: left;
+    }
+
+    .section-numbers-absolute {
+        border-radius: 10px 10px 0 10px;
+        padding: .9rem;
+        width: 30%;
+        top: 0;
+        right: 2.5rem;
+        bottom: unset;
+        left: unset;
+        transform: translateY(-50%);
+    }
+
+    .section-numbers::after {
+        position: absolute;
+        content: "";
+        background-color: var(--paleBlue);
+        height: 2.5rem;
+        width: 1.25rem;
+        clip-path: polygon(100% 0, 100% 100%, 0% 50%);
+        top: 1rem;
+        right: 2.45rem;
+    }
+}
